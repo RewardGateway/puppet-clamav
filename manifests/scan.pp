@@ -94,7 +94,7 @@ define clamav::scan (
     owner   => $clamav::params::user,
     mode    => '0500',
     content => template('clamav/scan.sh.erb'),
-    require => Class['Clamav'],
+    require => Class['clamav'],
   }
 
   # setup our scheduled job to run this scan
